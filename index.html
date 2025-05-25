@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home - SEWA Travelling Agency</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+   <header>
+    <nav class="navbar">
+      <h1 class="logo">SEWA Travels</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="book.html">Book</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="package.html">Packages</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+<!-- Background Video -->
+  <div class="video-container">
+    <video autoplay loop muted playsinline class="back-video" id="main-video">
+      <source src="vid3.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div class="overlay"></div>
+
+  <!-- Hero Section -->
+  <section class="hero2">
+    <h1>Explore Africa & Europe with Sewa</h1>
+    <p>Your gateway to unforgettable adventures in Botswana and beyond</p>
+    <a href="packages.html" class="btn">Discover More</a>
+
+    <!-- Video Controls -->
+    <div class="video-controls">
+      <span class="vid-btn active" data-src="vid3.mp4"></span>
+      <span class="vid-btn " data-src="vid-2.mp4"></span>
+      <span class="vid-btn" data-src="vid-3.mp4"></span>
+      <span class="vid-btn" data-src="vid-4.mp4"></span>
+      <span class="vid-btn" data-src="vid-5.mp4"></span>
+      <span class="vid-btn" data-src="vid-6.mp4"></span>
+    </div>
+  </section>
+  <footer>
+
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 SEWA Travelling Agency | All rights reserved.</p>
+  </div>
+</footer>
+  <script src="script.js"></script>
+
+  <script>
+    
+    // Video switching functionality
+    const video = document.getElementById('main-video');
+    const videoBtns = document.querySelectorAll('.vid-btn');
+    
+    videoBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        videoBtns.forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to clicked button
+        btn.classList.add('active');
+        
+        // Get the new video source
+        const newSrc = btn.getAttribute('data-src');
+        
+        // Change the video source
+        video.src = newSrc;
+        
+        // Play the video
+        video.play();
+      });
+    });
+  </script>
+</body>
+</html>

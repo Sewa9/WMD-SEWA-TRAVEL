@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home - SEWA Travelling Agency</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">SEWA Travels</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="book.html">Book</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="package.html">Packages</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+  <div class="hero-content">
+    <h1>SERVICES</h1>
+    
+  </div>
+</section>
+
+  <section class="services">
+    <h2></h2>
+      <p class="intro">Fill in your details and choose from our exciting travel packages across Africa and Europe.</p>
+    <div class="container">
+    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services - SEWA Travelling Agency</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">SEWA Travels</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="book.html">Book</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="package.html">Packages</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <button class="collapsible"><i class="fas fa-plane-departure"></i> Flight Booking</button>
+          <div class="content">
+            <p>We help you book affordable and convenient flights across Africa and Europe with top airlines.</p>
+            <a href="book.html" class="btn">Book This Service</a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <button class="collapsible"><i class="fas fa-hotel"></i> Hotel Reservations</button>
+          <div class="content">
+            <p>Get access to top-rated hotels, guest houses, and lodges suited to your budget and preferences.</p>
+            <a href="book.html" class="btn">Book This Service</a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <button class="collapsible"><i class="fas fa-passport"></i> Visa Assistance</button>
+          <div class="content">
+            <p>We guide you through the visa application process with reliable support and documentation help.</p>
+            <a href="book.html" class="btn">Book This Service</a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <button class="collapsible"><i class="fas fa-map-marked-alt"></i> Guided Tours</button>
+          <div class="content">
+            <p>Enjoy personalized tour guides who take you through cities, safaris, historical sites, and more.</p>
+            <a href="book.html" class="btn">Book This Service</a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <button class="collapsible"><i class="fas fa-shield-alt"></i> Travel Insurance</button>
+          <div class="content">
+            <p>Stay safe with affordable travel insurance packages covering medical, luggage, and emergencies.</p>
+            <a href="book.html" class="btn">Book This Service</a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <button class="collapsible"><i class="fas fa-car"></i> Fast Travel Options</button>
+          <div class="content">
+            <p>Explore fast and reliable transport from luxury cars to shuttle buses and more across destinations.</p>
+            <a href="book.html" class="btn">Book This Service</a>
+          </div>
+        </div>
+<div class="service-card">
+  <button class="collapsible"><i class="fas fa-plane-departure"></i> Flight Booking</button>
+  <div class="content">
+    <p>We help you book affordable and convenient flights across Africa and Europe with top airlines.</p>
+    <button class="form-toggle btn">Book This Service</button>
+
+    <!-- Hidden form -->
+    <form class="booking-form hidden">
+      <label for="name-flight">Your Name:</label>
+      <input type="text" id="name-flight" name="name" required />
+
+      <label for="email-flight">Your Email:</label>
+      <input type="email" id="email-flight" name="email" required />
+
+      <label for="message-flight">Special Requests:</label>
+      <textarea id="message-flight" name="message" rows="3"></textarea>
+
+      <button type="submit" class="btn">Submit Request</button>
+    </form>
+  </div>
+</div>
+
+
+      </div>
+    </div>
+  </main>
+
+
+
+  <footer>
+    <p>&copy; 2025 SEWA Travelling Agency. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Collapsible service sections
+    const collapsibles = document.querySelectorAll(".collapsible");
+    collapsibles.forEach(btn => {
+      btn.addEventListener("click", function () {
+        this.classList.toggle("active");
+        const content = this.nextElementSibling;
+        content.style.display = (content.style.display === "block") ? "none" : "block";
+      });
+    });
+
+    // Toggle forms on "Book This Service"
+  const toggles = document.querySelectorAll(".form-toggle");
+  toggles.forEach(toggle => {
+    toggle.addEventListener("click", function () {
+      const form = this.nextElementSibling;
+      form.classList.toggle("hidden");
+    });
+  });
+  </script>
+</body>
+</html>
+
+  
+

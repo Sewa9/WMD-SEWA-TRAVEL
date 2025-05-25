@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home - SEWA Travelling Agency</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">SEWA Travels</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="book.html">Book</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="package.html">Packages</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>BOOK</h1>
+    
+  </div>
+</section>
+
+   <main>
+    <p class="center-text">Fill out the form below to reserve your adventure with SEWA Travelling Agency.</p>
+
+    <div class="form-container">
+      <form action="#" method="post" class="booking-form">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="destination">Destination:</label>
+        <select id="destination" name="destination" required>
+          <option value="">Select a destination</option>
+          <option value="Botswana Safari">Botswana Safari</option>
+          <option value="Paris Tour">Paris Tour</option>
+          <option value="Cape Town">Cape Town</option>
+          <option value="Zanzibar Beach">Zanzibar Beach</option>
+        </select>
+
+        <label for="date">Travel Date:</label>
+        <input type="date" id="date" name="date" required />
+
+        <label for="people">Number of People:</label>
+        <input type="number" id="people" name="people" min="1" required />
+
+        <label for="notes">Additional Notes:</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="Special requests or info..."></textarea>
+
+        <button type="submit" class="btn purple">Submit Booking</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SEWA Travelling Agency. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

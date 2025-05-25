@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home - SEWA Travelling Agency</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">SEWA Travels</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="book.html">Book</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="package.html">Packages</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+  <div class="hero-content">
+    <h1>FEEDBACK</h1>
+    
+  </div>
+</section>
+
+  <section class="feedback-Ssection">
+    <h2></h2>
+      <p class="intro">Fill in your details and choose from our exciting travel packages across Africa and Europe.</p>
+    <div class="container">
+    </div>
+
+    <main>
+    <div class="container">
+      <h2 class="section-title">We Value Your Feedback</h2>
+      <p class="center-text">Tell us about your experience or how we can improve our services.</p>
+
+      <form id="feedback-form" class="feedback-form">
+        <input type="hidden" name="subject" value="Website Feedback" />
+
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label>Rate Our Service:</label>
+        <div class="star-rating">
+          <i class="fas fa-star" data-value="1"></i>
+          <i class="fas fa-star" data-value="2"></i>
+          <i class="fas fa-star" data-value="3"></i>
+          <i class="fas fa-star" data-value="4"></i>
+          <i class="fas fa-star" data-value="5"></i>
+        </div>
+        <input type="hidden" name="rating" id="rating" required />
+
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your comments or suggestions here..." required></textarea>
+
+        <button type="submit" class="btn">Submit Feedback</button>
+      </form>
+
+      <!-- Success message -->
+      <div id="success-message" class="success-message hidden">
+        <h3>✅ Thank you for your feedback!</h3>
+        <p>We truly appreciate your input. Your message has been received.</p>
+      </div>
+
+      <!-- Future testimonials (placeholder) -->
+      <div class="testimonial-section">
+        <h3>What Our Travelers Say</h3>
+        <p>Coming soon: Real reviews from SEWA travellers like you!</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SEWA Travelling Agency. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Star rating selection
+    const stars = document.querySelectorAll(".star-rating .fa-star");
+    const ratingInput = document.getElementById("rating");
+
+    stars.forEach(star => {
+      star.addEventListener("click", function () {
+        const value = this.getAttribute("data-value");
+        ratingInput.value = value;
+
+        stars.forEach(s => {
+          s.classList.remove("selected");
+          if (parseInt(s.getAttribute("data-value")) <= value) {
+            s.classList.add("selected");
+          }
+        });
+      });
+    });
+
+    // AJAX form submission
+    const form = document.getElementById("feedback-form");
+    const successMsg = document.getElementById("success-message");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+
+      fetch("https://formspree.io/f/yourformid", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json"
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          form.reset();
+          document.querySelectorAll(".fa-star").forEach(s => s.classList.remove("selected"));
+          successMsg.classList.remove("hidden");
+        } else {
+          alert("There was a problem submitting your feedback. Please try again.");
+        }
+      })
+      .catch(error => {
+        alert("Error: " + error.message);
+      });
+    });
+  </script>
+  <footer>
+    <p>&copy; 2025 SEWA Travelling Agency. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
